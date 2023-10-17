@@ -1,51 +1,65 @@
 local plugins = {
+	{ 'nvim-telescope/telescope.nvim',    dependencies = { 'nvim-lua/plenary.nvim' } },
 
-{ 'nvim-telescope/telescope.nvim',  dependencies = { 'nvim-lua/plenary.nvim' }  },
+	{
+		"NeogitOrg/neogit",
+		dependencies = {
+			"nvim-lua/plenary.nvim", -- required
+			"nvim-telescope/telescope.nvim", -- optional
+			"sindrets/diffview.nvim", -- optional
+			"ibhagwan/fzf-lua", -- optional
+		},
+		config = true
+	},
 
-{
-  "NeogitOrg/neogit",
-  dependencies = {
-    "nvim-lua/plenary.nvim",         -- required
-    "nvim-telescope/telescope.nvim", -- optional
-    "sindrets/diffview.nvim",        -- optional
-    "ibhagwan/fzf-lua",              -- optional
-  },
-  config = true
-},
+	{ "ellisonleao/gruvbox.nvim",         priority = 1000,                           config = true, },
+	{ "zbirenbaum/copilot.lua" },
 
-{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, },
+	{ 'nvim-treesitter/nvim-treesitter' },
 
-{ "zbirenbaum/copilot.lua" },
+	{ 'mbbill/undotree' },
 
-{'nvim-treesitter/nvim-treesitter'},
+	{ 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+	{ 'neovim/nvim-lspconfig' },
+	{ 'hrsh7th/cmp-nvim-lsp' },
+	{ 'hrsh7th/nvim-cmp' },
+	{ 'L3MON4D3/LuaSnip' },
 
-{'mbbill/undotree'},
+	{ 'neovim/nvim-lspconfig' },
+	{ 'jose-elias-alvarez/null-ls.nvim' },
+	{ 'MunifTanjim/prettier.nvim' },
 
-{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
-{'neovim/nvim-lspconfig'},
-{'hrsh7th/cmp-nvim-lsp'},
-{'hrsh7th/nvim-cmp'},
-{'L3MON4D3/LuaSnip'},
+	{ "williamboman/mason.nvim" },
+	{ 'williamboman/mason-lspconfig.nvim' },
 
-{'neovim/nvim-lspconfig'},
-{'jose-elias-alvarez/null-ls.nvim'},
-{'MunifTanjim/prettier.nvim'},
+	{ 'phaazon/hop.nvim' },
+	{ 'm4xshen/autoclose.nvim' },
+	{ 'akinsho/toggleterm.nvim',          version = "*",                             config = true },
+	{
+		'nvim-lualine/lualine.nvim',
+		dependencies = {
+			'kyazdani42/nvim-web-devicons',
+			opt = true
+		}
+	},
 
-{ "williamboman/mason.nvim" },
-{'williamboman/mason-lspconfig.nvim'},
+	{ 'APZelos/blamer.nvim' },
 
-{'phaazon/hop.nvim'},
-{'m4xshen/autoclose.nvim'},
+	{ 'airblade/vim-gitgutter' },
 
-{'akinsho/toggleterm.nvim', version = "*", config = true},
-
-{ 'nvim-lualine/lualine.nvim',
-dependencies = {
-  'kyazdani42/nvim-web-devicons',
-  opt = true
-} }
-
+	{ 'numToStr/Comment.nvim' },
+	{
+		"jackMort/ChatGPT.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("chatgpt").setup()
+		end,
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim"
+		}
+	}
 }
 
 return plugins
-

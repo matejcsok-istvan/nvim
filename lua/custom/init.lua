@@ -25,3 +25,6 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.updatetime = 50
 
+vim.opt.smartindent = true
+-- tab stop = 4
+vim.opt.tabstop = 4

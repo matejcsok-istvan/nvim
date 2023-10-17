@@ -1,0 +1,32 @@
+
+# Swap files
+*.swp
+*.swo
+*.swl
+
+# Backup files
+*~
+
+# Undo files
+*.undo
+
+# Neovim session files
+Session.vim
+
+# Temporary files
+.netrwhist
+
+# If you use Dein as a plugin manager, you might want to ignore its directories
+dein/
+dein_repos/
+
+# If you use vim-plug, you might want to ignore its installation directory
+plugged/
+
+# If you use coc.nvim, you might want to ignore its configurations
+coc-settings.json
+
+# Other plugin specific caches or temporary directories
+# (you'll need to determine these based on the plugins you use)
+
+.env
